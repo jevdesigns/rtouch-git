@@ -18,6 +18,13 @@
   "homeassistant": {
     "min_version": "2021.1.0"
   },
+  "host_network": false,
+  "devices": [],
+  "map": [
+    "config:rw"
+  ],
+  "image": "ghcr.io/jevdesigns/rtouch:latest",
+  "logo": "logo.svg",
   "panel_icon": "mdi:view-dashboard-variant",
   "map": [
     "config:rw"
