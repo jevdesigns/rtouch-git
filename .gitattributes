@@ -1,0 +1,4 @@
+* text=auto
+/build/ export-ignore
+/node_modules/ export-ignore
+client/build/ export-ignore

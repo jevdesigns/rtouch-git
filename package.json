@@ -1,0 +1,16 @@
+{
+  "name": "rtouch-backend",
+  "version": "2.0.0",
+  "scripts": {
+    "start": "node server.js",
+    "watch": "node watcher.js",
+    "builder": "npm install && cd client && npm install && npm run build",
+    "deploy": "deploy.bat",
+    "release": "git tag -a v$npm_package_version -m \"Release v$npm_package_version\" && git push origin v$npm_package_version"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "chokidar": "^3.5.3"
+  }
+}
