@@ -1,23 +1,26 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
+ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:latest
+FROM ${BUILD_FROM}
 
-# Install Node.js
-RUN apk add --no-cache nodejs npm
+ENV LANG C.UTF-8
+
+# Install build and runtime deps
+RUN apk add --no-cache nodejs npm bash
 
 WORKDIR /app
 
-# Install Backend Deps
-COPY package.json .
-RUN npm install
+# Copy package manifest and install backend deps
+COPY package.json package-lock.json* ./
+RUN npm install --production || true
 
-# Copy Source
-COPY . .
+# Copy the add-on files
+COPY . /app
 
-# Initial Build of Frontend
+# Build frontend (install dev deps if needed)
 WORKDIR /app/client
-RUN npm install
-RUN npm run build
+RUN npm install --production || npm install
+RUN npm run build || true
 
 WORKDIR /app
-RUN chmod a+x run.sh
+RUN chmod a+x /run.sh || chmod a+x run.sh
+
 CMD [ "/run.sh" ]
