@@ -23,6 +23,14 @@
     "config:rw"
   ],
   "logo": "logo.svg",
-  "options": {},
-  "schema": {}
+  "options": {
+    "enabled": true,
+    "port": 3000,
+    "use_ingress": true
+  },
+  "schema": {
+    "enabled": "bool",
+    "port": "int",
+    "use_ingress": "bool"
+  }
 }
