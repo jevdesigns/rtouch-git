@@ -22,7 +22,6 @@
   "map": [
     "config:rw"
   ],
-  "image": "ghcr.io/jevdesigns/rtouch:latest",
   "logo": "logo.svg",
   "options": {},
   "schema": {}
