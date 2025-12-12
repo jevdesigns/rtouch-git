@@ -13,7 +13,6 @@
   "startup": "services",
   "boot": "auto",
   "ingress": true,
-  "ingress_port": 3000,
   "ports": {},
   "homeassistant": {
     "min_version": "2021.1.0"
@@ -25,10 +24,6 @@
   ],
   "image": "ghcr.io/jevdesigns/rtouch:latest",
   "logo": "logo.svg",
-  "panel_icon": "mdi:view-dashboard-variant",
-  "map": [
-    "config:rw"
-  ],
   "options": {},
   "schema": {}
 }
